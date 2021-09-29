@@ -23,8 +23,6 @@
 		2060179F26F9F3F4009923F9 /* UIApplicationDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060179E26F9F3F4009923F9 /* UIApplicationDelegate+Extension.swift */; };
 		206017B426F9F722009923F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 206017A426F9F722009923F9 /* Assets.xcassets */; };
 		206017CD26FA4522009923F9 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206017CC26FA4522009923F9 /* Date+Extension.swift */; };
-		206017D326FB50B5009923F9 /* BottomDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206017D126FB50B5009923F9 /* BottomDetailTableViewCell.swift */; };
-		206017D426FB50B5009923F9 /* BottomDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 206017D226FB50B5009923F9 /* BottomDetailTableViewCell.xib */; };
 		20C56B1F26F7A67A00FE6056 /* UIImage+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C56B1E26F7A67A00FE6056 /* UIImage+Network.swift */; };
 		20C56B2726F7AA9D00FE6056 /* DetailNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C56B2626F7AA9C00FE6056 /* DetailNewsViewController.swift */; };
 		20C56B3026F7ABC200FE6056 /* DetailHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C56B2E26F7ABC200FE6056 /* DetailHeaderTableViewCell.swift */; };
@@ -73,8 +71,6 @@
 		2060179E26F9F3F4009923F9 /* UIApplicationDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplicationDelegate+Extension.swift"; sourceTree = "<group>"; };
 		206017A426F9F722009923F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		206017CC26FA4522009923F9 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
-		206017D126FB50B5009923F9 /* BottomDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDetailTableViewCell.swift; sourceTree = "<group>"; };
-		206017D226FB50B5009923F9 /* BottomDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomDetailTableViewCell.xib; sourceTree = "<group>"; };
 		20C56B1E26F7A67A00FE6056 /* UIImage+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Network.swift"; sourceTree = "<group>"; };
 		20C56B2626F7AA9C00FE6056 /* DetailNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNewsViewController.swift; sourceTree = "<group>"; };
 		20C56B2E26F7ABC200FE6056 /* DetailHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -298,8 +294,6 @@
 				20C56B2F26F7ABC200FE6056 /* DetailHeaderTableViewCell.xib */,
 				20C56B4026F7C18800FE6056 /* DetailMiddleTableVieCell.swift */,
 				20C56B4126F7C18800FE6056 /* DetailMiddleTableVieCell.xib */,
-				206017D126FB50B5009923F9 /* BottomDetailTableViewCell.swift */,
-				206017D226FB50B5009923F9 /* BottomDetailTableViewCell.xib */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -419,7 +413,6 @@
 				20C56B3126F7ABC200FE6056 /* DetailHeaderTableViewCell.xib in Resources */,
 				20C56B4326F7C18800FE6056 /* DetailMiddleTableVieCell.xib in Resources */,
 				204DCA3B26F51102002830B6 /* NewsFeedTableViewCell.xib in Resources */,
-				206017D426FB50B5009923F9 /* BottomDetailTableViewCell.xib in Resources */,
 				206017B426F9F722009923F9 /* Assets.xcassets in Resources */,
 				204DC9D826F4FE37002830B6 /* Main.storyboard in Resources */,
 			);
@@ -449,7 +442,6 @@
 				204DCA1A26F4FE9B002830B6 /* NewsFeed.swift in Sources */,
 				20C56B2726F7AA9D00FE6056 /* DetailNewsViewController.swift in Sources */,
 				204DCA3A26F51102002830B6 /* NewsFeedTableViewCell.swift in Sources */,
-				206017D326FB50B5009923F9 /* BottomDetailTableViewCell.swift in Sources */,
 				2060179726F9B02F009923F9 /* NewsAppWeb.swift in Sources */,
 				20C56B1F26F7A67A00FE6056 /* UIImage+Network.swift in Sources */,
 				20C56B4226F7C18800FE6056 /* DetailMiddleTableVieCell.swift in Sources */,
