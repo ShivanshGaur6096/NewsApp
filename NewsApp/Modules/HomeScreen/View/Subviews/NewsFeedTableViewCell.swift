@@ -25,6 +25,7 @@ class NewsFeedTableViewCell: UITableViewCell {
         imageViewNews?.downloaded(from: data?.urlToImage ?? emptyString)
         self.newsSource?.text = "Source: " + String(data?.source?.name ?? "Unknown")
     }
+
     @IBAction func favThisNews(_ sender: UIButton) {
         favoriteTheNews?()
     }

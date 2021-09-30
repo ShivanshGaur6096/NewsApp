@@ -59,6 +59,7 @@ extension DetailNewsViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = self.tableviewDetail.dequeueReusableCell(withIdentifier: TableviewCell.kNewsContentTableViewCell,
                                                                 for: indexPath) as! DetailMiddleTableVieCell
             cell.updateData(data: self.article)
+            // Guard let
             guard article?.url != nil else {
                 invalidURLAlert()
                 return UITableViewCell()
@@ -76,13 +77,9 @@ extension DetailNewsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+
     func invalidURLAlert(){
-        let invalidURL = UIAlertController(title: "Invalid URL",
-                                           message: "News you are trying to visit was removed due to some reason(s).",
-                                           preferredStyle: UIAlertController.Style.alert)
-        invalidURL.addAction(UIAlertAction(title: "OK",
-                                           style: UIAlertAction.Style.default,
-                                           handler: nil))
-        self.present(invalidURL, animated: true, completion: nil)
+        self.addAlertController(title: "Invalid URL", message: "News you are trying to visit was removed due to some reason(s).", actions: ["OK"])
     }
+ 
 }

@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJx-3F-7BP" userLabel="backView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="290"/>
+                        <rect key="frame" x="0.0" y="10" width="320" height="270"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7MV-CF-jNk">
                                 <rect key="frame" x="12" y="12" width="296" height="146"/>
@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="authorNameAndPublishDate" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofN-2A-K3m">
-                                <rect key="frame" x="12" y="262" width="296" height="16"/>
+                                <rect key="frame" x="12" y="242" width="296" height="16"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -56,8 +56,8 @@
                 </subviews>
                 <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                 <constraints>
-                    <constraint firstItem="FJx-3F-7BP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="OHd-4e-Kpg"/>
-                    <constraint firstAttribute="bottom" secondItem="FJx-3F-7BP" secondAttribute="bottom" id="Qwl-ao-A0w"/>
+                    <constraint firstItem="FJx-3F-7BP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="OHd-4e-Kpg"/>
+                    <constraint firstAttribute="bottom" secondItem="FJx-3F-7BP" secondAttribute="bottom" constant="10" id="Qwl-ao-A0w"/>
                     <constraint firstItem="FJx-3F-7BP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="da7-vr-CqL"/>
                     <constraint firstAttribute="trailing" secondItem="FJx-3F-7BP" secondAttribute="trailing" id="rhm-Ew-Idd"/>
                 </constraints>

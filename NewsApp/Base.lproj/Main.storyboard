@@ -11,13 +11,13 @@
         <!--Fresh News-->
         <scene sceneID="Iy2-bR-oMC">
             <objects>
-                <viewController id="kAL-3H-ih0" customClass="ViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kAL-3H-ih0" customClass="NewsListingViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NzA-hX-pYi" customClass="I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X2c-6v-WTn">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="809"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="kAL-3H-ih0" id="Zgq-ev-S1l"/>
@@ -29,7 +29,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="X2c-6v-WTn" firstAttribute="leading" secondItem="QlA-nt-x80" secondAttribute="leading" id="3v5-v1-d76"/>
-                            <constraint firstItem="QlA-nt-x80" firstAttribute="bottom" secondItem="X2c-6v-WTn" secondAttribute="bottom" id="N6R-GD-YqM"/>
+                            <constraint firstItem="QlA-nt-x80" firstAttribute="bottom" secondItem="X2c-6v-WTn" secondAttribute="bottom" constant="-35" id="N6R-GD-YqM"/>
                             <constraint firstItem="X2c-6v-WTn" firstAttribute="top" secondItem="QlA-nt-x80" secondAttribute="top" id="ZuW-My-ndZ"/>
                             <constraint firstItem="X2c-6v-WTn" firstAttribute="trailing" secondItem="QlA-nt-x80" secondAttribute="trailing" id="p6g-82-nR2"/>
                         </constraints>
@@ -60,7 +60,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yX6-3R-2Wk">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="809"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -69,7 +69,7 @@
                         <constraints>
                             <constraint firstItem="3GR-NA-eue" firstAttribute="trailing" secondItem="yX6-3R-2Wk" secondAttribute="trailing" id="95C-ek-G7S"/>
                             <constraint firstItem="yX6-3R-2Wk" firstAttribute="leading" secondItem="3GR-NA-eue" secondAttribute="leading" id="AeB-U5-SFS"/>
-                            <constraint firstItem="3GR-NA-eue" firstAttribute="bottom" secondItem="yX6-3R-2Wk" secondAttribute="bottom" id="ZJX-k6-uiL"/>
+                            <constraint firstItem="3GR-NA-eue" firstAttribute="bottom" secondItem="yX6-3R-2Wk" secondAttribute="bottom" constant="-35" id="ZJX-k6-uiL"/>
                             <constraint firstItem="yX6-3R-2Wk" firstAttribute="top" secondItem="3GR-NA-eue" secondAttribute="top" id="zlg-Fm-CVO"/>
                         </constraints>
                     </view>
@@ -90,6 +90,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mfb-hY-JGU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.91764706370000004" green="0.41568624970000001" blue="0.19607841970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

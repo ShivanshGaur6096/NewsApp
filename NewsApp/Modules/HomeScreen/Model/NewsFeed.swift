@@ -5,7 +5,7 @@
 //  Created by Shivansh Gaur on 17/09/21.
 //
 import Foundation
-
+// Codable
 struct NewsFeed {
     var status: String?
     var totalResults: Int?

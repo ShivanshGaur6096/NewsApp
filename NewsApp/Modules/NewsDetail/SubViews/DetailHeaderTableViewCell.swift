@@ -11,10 +11,12 @@ class DetailHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var imageViewNews: UIImageView?
     @IBOutlet weak var title: UILabel?
     @IBOutlet weak var authorNameAndPublishDate: UILabel!
+    // Reanme to parent view
     @IBOutlet weak var backView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        // code shifted to UIview extension 
 //        backgroundColor = .clear
         self.backView.layer.borderWidth = 0
         self.backView.layer.cornerRadius = 10
@@ -25,6 +27,7 @@ class DetailHeaderTableViewCell: UITableViewCell {
         self.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.layer.shadowRadius = 2
 //        self.layer.shadowColor = .some(.)
+        /// 
         self.layer.masksToBounds = false
     }
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class NewsListingViewController: UIViewController {
     
     @IBOutlet weak var tableviewNewsFeed: UITableView!
     
@@ -25,11 +25,12 @@ class ViewController: UIViewController {
         tableviewNewsFeed.dataSource = self
     }
     
+    // move to Service
+    // Use codable web services.
     func getNewsFeeds() {
-        // let emptyURL = ""
-        let url = URL(string: businessNewsURL)
-        guard url != nil else{ return serverDown() }
-        let dataTask = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+        let newsURL = URL(string: businessNewsURL)
+        guard let url = newsURL else{ return serverDown() }
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error == nil && data != nil {
                 do {
                     if let jsonData = data {
@@ -42,20 +43,21 @@ class ViewController: UIViewController {
                             }
                         }
                     }
-                } catch{
+                } catch {
                     print("Error in JSON Parsing")
                 }
             }
         }
         dataTask.resume()
     }
+
     @IBAction func refreshNews(_ sender: Any) {
         getNewsFeeds()
     }
 }
-
+// Rename VC - NewsListing
 // UITableView DataSource and Delegate
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension NewsListingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayArticles.count
@@ -83,6 +85,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     // Alert on Home Screen
     /// Instead of Popup try to use toast
+    // Common Utility file
+    // Strings in AppConstant
     func futureUpdate() {
         let invalidURL = UIAlertController(title: "Available Soon",
                                            message: "This feature will be available soon in future updates",
