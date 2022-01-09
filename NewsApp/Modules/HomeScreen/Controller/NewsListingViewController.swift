@@ -88,26 +88,17 @@ extension NewsListingViewController: UITableViewDataSource, UITableViewDelegate 
     // Common Utility file
     // Strings in AppConstant
     func futureUpdate() {
-        let invalidURL = UIAlertController(title: "Available Soon",
-                                           message: "This feature will be available soon in future updates",
-                                           preferredStyle: UIAlertController.Style.alert)
-        invalidURL.addAction(UIAlertAction(title: "OK",
-                                           style: UIAlertAction.Style.default,
-                                           handler: nil))
-        self.present(invalidURL, animated: true, completion: nil)
+        addAlertController(title: "Available Soon",
+                           message: "This feature will be available soon in future updates",
+                           actions: ["OK"])
+        
+//        self.present(invalidURL, animated: true, completion: nil)
     }
     
     func serverDown() {
-        let urlNotFound = UIAlertController(title: "！ Server Down ！",
-                                            message: "We are updating our server. Please come back later. You can explore your Favourit and Saved News section.❤️",
-                                            preferredStyle: UIAlertController.Style.alert)
-        urlNotFound.addAction(UIAlertAction(title: "OK",
-                                            style: UIAlertAction.Style.default,
-                                            handler: nil))
-        urlNotFound.addAction(UIAlertAction(title: "Continue",
-                                            style: UIAlertAction.Style.cancel,
-                                            handler: nil))
-        present(urlNotFound, animated: true, completion: nil)
-    }
+        addAlertController(title: "！ Server Down ！",
+                           message: "We are updating our server. Please come back later. You can explore your Favourit and Saved News section.❤️",
+                           actions: ["OK","Continue"])
+            }
 }
 
