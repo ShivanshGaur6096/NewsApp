@@ -10,12 +10,12 @@ import UIKit
 class NewsListingViewController: UIViewController {
     
     @IBOutlet weak var tableviewNewsFeed: UITableView!
-    
-    var arrayArticles:[Articles] = []
+    var arrayArticles: [Articles] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSetup()
-        getNewsFeeds()
+        getNewsFeeds(newsType: appleNewsURL)
     }
     
     func tableViewSetup() {
@@ -24,39 +24,34 @@ class NewsListingViewController: UIViewController {
         tableviewNewsFeed.delegate = self
         tableviewNewsFeed.dataSource = self
     }
-    
-    // move to Service
-    // Use codable web services.
-    func getNewsFeeds() {
-        let newsURL = URL(string: businessNewsURL)
-        guard let url = newsURL else{ return serverDown() }
+
+    // MARK: API Calling
+    func getNewsFeeds(newsType: String) {
+        let newsURL = URL(string: newsType)
+        if let url = newsURL {
         let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error == nil && data != nil {
                 do {
-                    if let jsonData = data {
-                        if let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
-                            print(json)
-                            let newsFeed: NewsFeed = NewsFeed(dict: json)
-                            self.arrayArticles = newsFeed.articles ?? []
-                            DispatchQueue.main.async {
-                                self.tableviewNewsFeed.reloadData()
-                            }
-                        }
+                    let json = try JSONDecoder().decode(NewsFeed.self, from: data!)
+                    self.arrayArticles = json.articles ?? []
+                    DispatchQueue.main.async {
+                        self.tableviewNewsFeed.reloadData()
                     }
-                } catch {
-                    print("Error in JSON Parsing")
+                } catch let err {
+                    print(err.localizedDescription)
                 }
             }
         }
         dataTask.resume()
     }
+    }
+
 
     @IBAction func refreshNews(_ sender: Any) {
-        getNewsFeeds()
+        getNewsFeeds(newsType: businessNewsURL)
     }
 }
-// Rename VC - NewsListing
-// UITableView DataSource and Delegate
+
 extension NewsListingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,7 +59,8 @@ extension NewsListingViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableviewNewsFeed.dequeueReusableCell(withIdentifier: ViewControllerIdentifier.kCell, for: indexPath) as! NewsFeedTableViewCell
+        let cell = self.tableviewNewsFeed.dequeueReusableCell(withIdentifier: ViewControllerIdentifier.kCell,
+                                                              for: indexPath) as! NewsFeedTableViewCell
         cell.updateData(data: self.arrayArticles[indexPath.row])
         cell.favoriteTheNews = { [weak self] in
             self!.futureUpdate()
@@ -78,27 +74,15 @@ extension NewsListingViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard : UIStoryboard = UIStoryboard(name: Storyboard.kMain, bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: ViewControllerIdentifier.kdetailPage) as! DetailNewsViewController
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: ViewControllerIdentifier.kDetailPage) as! DetailNewsViewController
         nextViewController.article = arrayArticles[indexPath.row]
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
-    
-    // Alert on Home Screen
-    /// Instead of Popup try to use toast
-    // Common Utility file
-    // Strings in AppConstant
+
     func futureUpdate() {
-        addAlertController(title: "Available Soon",
-                           message: "This feature will be available soon in future updates",
-                           actions: ["OK"])
-        
-//        self.present(invalidURL, animated: true, completion: nil)
+        addAlertController(title: FutureUpdateAlertMessage.kTitle,
+                           message: FutureUpdateAlertMessage.kMessage,
+                           actions: [FutureUpdateAlertMessage.kAction])
     }
-    
-    func serverDown() {
-        addAlertController(title: "！ Server Down ！",
-                           message: "We are updating our server. Please come back later. You can explore your Favourit and Saved News section.❤️",
-                           actions: ["OK","Continue"])
-            }
 }
 

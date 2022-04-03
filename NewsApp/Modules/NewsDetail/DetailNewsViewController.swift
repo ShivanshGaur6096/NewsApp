@@ -41,7 +41,6 @@ class DetailNewsViewController: UIViewController {
     }
 }
 
-// UITableView DataSource and Delegate
 extension DetailNewsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,7 +58,6 @@ extension DetailNewsViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = self.tableviewDetail.dequeueReusableCell(withIdentifier: TableviewCell.kNewsContentTableViewCell,
                                                                 for: indexPath) as! DetailMiddleTableVieCell
             cell.updateData(data: self.article)
-            // Guard let
             guard article?.url != nil else {
                 invalidURLAlert()
                 return UITableViewCell()
@@ -68,7 +66,6 @@ extension DetailNewsViewController: UITableViewDataSource, UITableViewDelegate {
                 NewsAppWeb.openURLIntoNativeBrowser(url: self?.article?.url ?? emptyString)
             }
             return cell
-            
         } else {
             return UITableViewCell()
         }
@@ -79,7 +76,9 @@ extension DetailNewsViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func invalidURLAlert(){
-        self.addAlertController(title: "Invalid URL", message: "News you are trying to visit was removed due to some reason(s).", actions: ["OK"])
+        self.addAlertController(title: InvalidURLAlertMessage.kTitle,
+                                message: InvalidURLAlertMessage.kMessage,
+                                actions: [InvalidURLAlertMessage.kAction])
     }
  
 }

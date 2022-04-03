@@ -28,7 +28,6 @@ let businessNewsURL = ApiStuffs.kBaseUrl + NewsCategory.kBussinessNews + ApiStuf
 let techCrunchURL = ApiStuffs.kBaseUrl + NewsCategory.kTechCrunchNews + ApiStuffs.API_Key
 let wallStreetURL = ApiStuffs.kBaseUrl + NewsCategory.kWallStreetNews + ApiStuffs.API_Key
 
-// DRY Rules - Don't Repeat Yourself
 struct TableviewCell {
     static let kDetailHeaderTableViewCell   = "DetailHeaderTableViewCell"
     static let kNewsContentTableViewCell    = "DetailMiddleTableVieCell"
@@ -41,7 +40,19 @@ struct Storyboard {
 
 struct ViewControllerIdentifier {
     static let  kCell = "cell"
-    static let  kdetailPage = "detailPage"
+    static let  kDetailPage = "detailPage"
+}
+
+struct FutureUpdateAlertMessage {
+    static let kTitle = "Available Soon"
+    static let kMessage = "This feature will be available soon in future updates"
+    static let kAction = "OK"
+}
+
+struct InvalidURLAlertMessage {
+    static let kTitle = "Invalid URL"
+    static let kMessage = "News you are trying to visit was removed due to some reason(s)."
+    static let kAction = "OK"
 }
 
 

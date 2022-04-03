@@ -35,16 +35,6 @@ class DetailHeaderTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         self.title?.text = data?.description
         imageViewNews?.downloaded(from: data?.urlToImage ?? emptyString)
-        
         self.authorNameAndPublishDate.text = "Published by - \(data?.author ?? "Unknown") on \(Date.redableDateFormat(urlDate: data?.publishedAt))"
     }
 }
-
-
-
-
-
-
-
-//Date.redableDateFormat(urlDate: data?.publishedAt)
-//data?.publishedAt ?? emptyString
