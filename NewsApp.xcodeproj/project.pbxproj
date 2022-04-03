@@ -293,7 +293,6 @@
 		20C56B2326F7AA9C00FE6056 /* NewsDetail */ = {
 			isa = PBXGroup;
 			children = (
-				20C56B2626F7AA9C00FE6056 /* DetailNewsViewController.swift */,
 				20C56B2426F7AA9C00FE6056 /* Views */,
 				20C56B2526F7AA9C00FE6056 /* Controller */,
 			);
@@ -304,6 +303,8 @@
 			isa = PBXGroup;
 			children = (
 				20C56B2F26F7ABC200FE6056 /* DetailHeaderTableViewCell.xib */,
+				20C56B2E26F7ABC200FE6056 /* DetailHeaderTableViewCell.swift */,
+				20C56B4026F7C18800FE6056 /* DetailMiddleTableVieCell.swift */,
 				20C56B4126F7C18800FE6056 /* DetailMiddleTableVieCell.xib */,
 			);
 			path = Views;
@@ -312,8 +313,7 @@
 		20C56B2526F7AA9C00FE6056 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				20C56B2E26F7ABC200FE6056 /* DetailHeaderTableViewCell.swift */,
-				20C56B4026F7C18800FE6056 /* DetailMiddleTableVieCell.swift */,
+				20C56B2626F7AA9C00FE6056 /* DetailNewsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
