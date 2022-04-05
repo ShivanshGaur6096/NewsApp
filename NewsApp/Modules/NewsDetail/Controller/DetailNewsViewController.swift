@@ -34,10 +34,10 @@ class DetailNewsViewController: UIViewController {
     }
     
     func registerTableViewCells() {
-        self.tableviewDetail.register(UINib(nibName: TableviewCell.kDetailHeaderTableViewCell, bundle: nil),
-                                      forCellReuseIdentifier: TableviewCell.kDetailHeaderTableViewCell)
-        self.tableviewDetail.register(UINib(nibName: TableviewCell.kNewsContentTableViewCell, bundle: nil),
-                                      forCellReuseIdentifier: TableviewCell.kNewsContentTableViewCell)
+        self.tableviewDetail.register(UINib(nibName: TableviewCell.kDetailHeaderCell, bundle: nil),
+                                      forCellReuseIdentifier: TableviewCell.kDetailHeaderCell)
+        self.tableviewDetail.register(UINib(nibName: TableviewCell.kNewsContentCell, bundle: nil),
+                                      forCellReuseIdentifier: TableviewCell.kNewsContentCell)
     }
 }
 
@@ -49,14 +49,15 @@ extension DetailNewsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if itemsArray[indexPath.row] == .header {
-            let cell = self.tableviewDetail.dequeueReusableCell(withIdentifier: TableviewCell.kDetailHeaderTableViewCell,
-                                                                for: indexPath) as! DetailHeaderTableViewCell
+            guard let cell = self.tableviewDetail.dequeueReusableCell(withIdentifier: TableviewCell.kDetailHeaderCell,
+                                                                      for: indexPath) as? DetailHeaderTableViewCell
+            else { return UITableViewCell() }
             cell.updateData(data: self.article)
             return cell
-            
         } else if itemsArray[indexPath.row] == .middle {
-            let cell = self.tableviewDetail.dequeueReusableCell(withIdentifier: TableviewCell.kNewsContentTableViewCell,
-                                                                for: indexPath) as! DetailMiddleTableVieCell
+            guard let cell = self.tableviewDetail.dequeueReusableCell(withIdentifier: TableviewCell.kNewsContentCell,
+                                                                      for: indexPath) as? DetailMiddleTableVieCell
+            else { return UITableViewCell() }
             cell.updateData(data: self.article)
             guard article?.url != nil else {
                 invalidURLAlert()
@@ -75,10 +76,9 @@ extension DetailNewsViewController: UITableViewDataSource, UITableViewDelegate {
         return UITableView.automaticDimension
     }
 
-    func invalidURLAlert(){
+    func invalidURLAlert() {
         self.addAlertController(title: InvalidURLAlertMessage.kTitle,
                                 message: InvalidURLAlertMessage.kMessage,
                                 actions: [InvalidURLAlertMessage.kAction])
     }
- 
 }

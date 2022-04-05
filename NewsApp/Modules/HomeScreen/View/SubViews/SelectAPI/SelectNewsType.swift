@@ -15,6 +15,4 @@ class SelectNewsType: UIView {
     @IBOutlet weak var businessNews: UIButton!
     @IBOutlet weak var teslaNews: UIButton!
     @IBOutlet weak var appleNews: UIButton!
-
 }
-

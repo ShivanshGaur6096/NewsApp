@@ -46,7 +46,6 @@ class NewsListingViewController: UIViewController {
     }
     }
 
-
     @IBAction func refreshNews(_ sender: Any) {
         getNewsFeeds(newsType: businessNewsURL)
     }
@@ -57,7 +56,8 @@ extension NewsListingViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayArticles.count
     }
-    
+
+    // swiftlint:disable force_cast
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableviewNewsFeed.dequeueReusableCell(withIdentifier: ViewControllerIdentifier.kCell,
                                                               for: indexPath) as! NewsFeedTableViewCell
@@ -74,7 +74,8 @@ extension NewsListingViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard : UIStoryboard = UIStoryboard(name: Storyboard.kMain, bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: ViewControllerIdentifier.kDetailPage) as! DetailNewsViewController
+        guard let nextViewController = storyBoard.instantiateViewController(withIdentifier: ViewControllerIdentifier.kDetailPage) as? DetailNewsViewController
+        else { return }
         nextViewController.article = arrayArticles[indexPath.row]
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
@@ -85,4 +86,3 @@ extension NewsListingViewController: UITableViewDataSource, UITableViewDelegate 
                            actions: [FutureUpdateAlertMessage.kAction])
     }
 }
-

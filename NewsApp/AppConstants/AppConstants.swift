@@ -11,7 +11,7 @@ let emptyString = ""
 
 struct ApiStuffs {
     static let kBaseUrl = "https://newsapi.org/v2"
-    static let API_Key = "f94188b93edf4865af139885c6d99c68"
+    static let apiKey = "f94188b93edf4865af139885c6d99c68"
 }
 struct NewsCategory {
     static let kAppleNews = "/everything?q=apple&from=" + Date.returnPreviousDate() + "&to=" + Date.returnCurrentDate() + "&sortBy=All&apiKey="
@@ -22,15 +22,15 @@ struct NewsCategory {
 }
 
 // Date Change
-let appleNewsURL = ApiStuffs.kBaseUrl + NewsCategory.kAppleNews + ApiStuffs.API_Key
-let teslaNewsURL = ApiStuffs.kBaseUrl + NewsCategory.kTeslaNews + ApiStuffs.API_Key
-let businessNewsURL = ApiStuffs.kBaseUrl + NewsCategory.kBussinessNews + ApiStuffs.API_Key
-let techCrunchURL = ApiStuffs.kBaseUrl + NewsCategory.kTechCrunchNews + ApiStuffs.API_Key
-let wallStreetURL = ApiStuffs.kBaseUrl + NewsCategory.kWallStreetNews + ApiStuffs.API_Key
+let appleNewsURL = ApiStuffs.kBaseUrl + NewsCategory.kAppleNews + ApiStuffs.apiKey
+let teslaNewsURL = ApiStuffs.kBaseUrl + NewsCategory.kTeslaNews + ApiStuffs.apiKey
+let businessNewsURL = ApiStuffs.kBaseUrl + NewsCategory.kBussinessNews + ApiStuffs.apiKey
+let techCrunchURL = ApiStuffs.kBaseUrl + NewsCategory.kTechCrunchNews + ApiStuffs.apiKey
+let wallStreetURL = ApiStuffs.kBaseUrl + NewsCategory.kWallStreetNews + ApiStuffs.apiKey
 
 struct TableviewCell {
-    static let kDetailHeaderTableViewCell   = "DetailHeaderTableViewCell"
-    static let kNewsContentTableViewCell    = "DetailMiddleTableVieCell"
+    static let kDetailHeaderCell   = "DetailHeaderTableViewCell"
+    static let kNewsContentCell    = "DetailMiddleTableVieCell"
     static let kNewsFeedTableViewCell       = "NewsFeedTableViewCell"
 }
 
@@ -54,5 +54,3 @@ struct InvalidURLAlertMessage {
     static let kMessage = "News you are trying to visit was removed due to some reason(s)."
     static let kAction = "OK"
 }
-
-
