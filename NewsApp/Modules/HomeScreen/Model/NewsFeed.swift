@@ -21,7 +21,7 @@ struct Articles: Codable {
     let url: String?
     let urlToImage: String?
     let publishedAt: String?
-    let content: String?
+    var content: String?
 }
 
 // MARK: - Source
