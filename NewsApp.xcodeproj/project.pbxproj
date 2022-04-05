@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20434DD027FCA3E300E20787 /* DateExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20434DCF27FCA3E300E20787 /* DateExtensionsTests.swift */; };
 		204DC9D826F4FE37002830B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204DC9D626F4FE37002830B6 /* Main.storyboard */; };
 		204DC9DB26F4FE37002830B6 /* NewsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 204DC9D926F4FE37002830B6 /* NewsApp.xcdatamodeld */; };
 		204DC9E026F4FE38002830B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204DC9DE26F4FE38002830B6 /* LaunchScreen.storyboard */; };
-		204DC9EB26F4FE38002830B6 /* NewsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DC9EA26F4FE38002830B6 /* NewsAppTests.swift */; };
 		204DC9F626F4FE38002830B6 /* NewsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DC9F526F4FE38002830B6 /* NewsAppUITests.swift */; };
 		204DCA1926F4FE9B002830B6 /* NewsListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DCA0F26F4FE9B002830B6 /* NewsListingViewController.swift */; };
 		204DCA1A26F4FE9B002830B6 /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204DCA1126F4FE9B002830B6 /* NewsFeed.swift */; };
@@ -53,13 +53,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20434DCF27FCA3E300E20787 /* DateExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionsTests.swift; sourceTree = "<group>"; };
 		204DC9CD26F4FE37002830B6 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		204DC9D726F4FE37002830B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		204DC9DA26F4FE37002830B6 /* NewsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsApp.xcdatamodel; sourceTree = "<group>"; };
 		204DC9DF26F4FE38002830B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		204DC9E126F4FE38002830B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		204DC9E626F4FE38002830B6 /* NewsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		204DC9EA26F4FE38002830B6 /* NewsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppTests.swift; sourceTree = "<group>"; };
 		204DC9EC26F4FE38002830B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		204DC9F126F4FE38002830B6 /* NewsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		204DC9F526F4FE38002830B6 /* NewsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITests.swift; sourceTree = "<group>"; };
@@ -147,8 +147,8 @@
 		204DC9E926F4FE38002830B6 /* NewsAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				204DC9EA26F4FE38002830B6 /* NewsAppTests.swift */,
 				204DC9EC26F4FE38002830B6 /* Info.plist */,
+				20434DCF27FCA3E300E20787 /* DateExtensionsTests.swift */,
 			);
 			path = NewsAppTests;
 			sourceTree = "<group>";
@@ -505,7 +505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				204DC9EB26F4FE38002830B6 /* NewsAppTests.swift in Sources */,
+				20434DD027FCA3E300E20787 /* DateExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,7 +711,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NewsAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -732,7 +732,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NewsAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

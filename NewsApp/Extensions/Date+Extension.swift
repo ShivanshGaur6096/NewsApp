@@ -8,21 +8,20 @@
 import Foundation
 
 extension Date {
-    static func returnPreviousDate() -> String{
+    static func returnPreviousDate() -> String {
         let previousDate = Calendar.current.date(byAdding: .day, value: -1 ,to: Date())!
-//        2021-01-23 'T' 05:14:01 'Z'
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.string(from: previousDate)
     }
-    
+
     static func returnCurrentDate() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.string(from: Date())
     }
 
-    static func redableDateFormat(urlDate: String?) -> String{
+    static func redableDateFormat(urlDate: String?) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         let receivedDate = dateFormatter.date(from: urlDate ?? "1999-01-01T01:00:00Z")
@@ -30,5 +29,4 @@ extension Date {
         currentDateFormat.dateFormat = "dd-MM-yyyy hh:mm a"
         return currentDateFormat.string(from: receivedDate!)
     }
-
 }

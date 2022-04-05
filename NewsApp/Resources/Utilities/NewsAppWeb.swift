@@ -5,7 +5,6 @@
 //  Created by Shivansh Gaur on 21/09/21.
 //
 
-import Foundation
 import UIKit
 
 class NewsAppWeb {
