@@ -24,7 +24,7 @@ Special work done in application:<br />
 4. <a href = "https://github.com/realm/SwiftLint">SwiftLint</a> an open-source tool to enforce Swift style and conventions developed by realm is used.
 5. The Don't Repeat Yourself (DRY) principle implemented so that duplication in logic should be eliminated via abstraction and "AppConstant" file.
 <br />
-WIP<br />
+WIP
 1. Updating UI
 2. For now only two type of News can be seen. Adding a section of landing screen to choose news by clicking on type. For now by default Apple News were shown on launch and Business News can be seen by clicking Reload button at top-right of screen.
 3. The bottom section on Detail News Page will be having sharing options to share news via different social media and messaging platforms. 
