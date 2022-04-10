@@ -62,6 +62,7 @@ extension NewsListingViewController: UITableViewDataSource, UITableViewDelegate 
         let cell = self.tableviewNewsFeed.dequeueReusableCell(withIdentifier: ViewControllerIdentifier.kCell,
                                                               for: indexPath) as! NewsFeedTableViewCell
         cell.updateData(data: self.arrayArticles[indexPath.row])
+        cell.applyAccessibility()
         cell.favoriteTheNews = { [weak self] in
             self!.futureUpdate()
         }

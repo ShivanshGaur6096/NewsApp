@@ -41,7 +41,7 @@ class DetailNewsViewController: UIViewController {
 }
 
 extension DetailNewsViewController: UITableViewDataSource, UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemsArray.count
     }
@@ -52,12 +52,14 @@ extension DetailNewsViewController: UITableViewDataSource, UITableViewDelegate {
                                                                       for: indexPath) as? DetailHeaderTableViewCell
             else { return UITableViewCell() }
             cell.updateData(data: self.article)
+            cell.applyAccessibility()
             return cell
         } else if itemsArray[indexPath.row] == .middle {
             guard let cell = self.tableviewDetail.dequeueReusableCell(withIdentifier: TableviewCell.kNewsContentCell,
-                                                                      for: indexPath) as? DetailMiddleTableVieCell
+                                                                      for: indexPath) as? DetailDescriptionTableViewCell
             else { return UITableViewCell() }
             cell.updateData(data: self.article)
+            cell.applyAccessibility()
             guard article?.url != nil else {
                 invalidURLAlert()
                 return UITableViewCell()

@@ -24,6 +24,7 @@ class DetailHeaderTableViewCell: UITableViewCell {
         self.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.layer.shadowRadius = 2
         self.layer.masksToBounds = false
+        setupAccessibility()
     }
 
     func updateData(data: Articles?) {
@@ -31,5 +32,32 @@ class DetailHeaderTableViewCell: UITableViewCell {
         self.title?.text = data?.description
         imageViewNews?.downloaded(from: data?.urlToImage ?? emptyString)
         self.authorNameAndPublishDate.text = "Published by - \(data?.author ?? "Unknown") on \(Date.redableDateFormat(urlDate: data?.publishedAt))"
+        updateAccessibilityLabels()
+    }
+}
+
+// MARK: - Apply Accessibility
+extension DetailHeaderTableViewCell: VoiceOverAccessible {
+    func setupAccessibility() {
+        backView.isAccessibilityElement = false
+        imageViewNews?.isAccessibilityElement = true
+        imageViewNews?.accessibilityHint = "News Banner"
+
+        title?.isAccessibilityElement = true
+        title?.accessibilityHint = "News Title"
+
+        authorNameAndPublishDate.isAccessibilityElement = true
+        authorNameAndPublishDate.accessibilityHint = "Author Name and News Publish Date"
+    }
+
+    func assignAccessibilityIds() {
+        imageViewNews?.accessibilityIdentifier = "newsImage"
+        title?.accessibilityIdentifier = "newsTitle"
+        authorNameAndPublishDate.accessibilityIdentifier = "authorNameAndPublishDate"
+    }
+
+    func updateAccessibilityLabels() {
+        title?.accessibilityLabel = title?.text
+        authorNameAndPublishDate.accessibilityLabel = authorNameAndPublishDate.text
     }
 }
